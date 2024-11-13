@@ -1,0 +1,24 @@
+|===
+| Comando                               | Descrição                                                                      | Exemplo
+
+| `nc -l -p <porta>`                   | Inicia um servidor (modo listen) em uma porta específica.                      | `nc -l -p 1234` Inicia um servidor na porta 1234.
+| `nc <host> <porta>`                  | Conecta a um servidor remoto em um host e porta específicos.                   | `nc 192.168.1.1 1234` Conecta ao host na porta 1234.
+| `nc -v <host> <porta>`               | Realiza uma conexão com verbosidade (detalhes da conexão).                     | `nc -v google.com 80` Mostra detalhes da conexão.
+| `nc -zv <host> <porta>`              | Verifica se uma porta está aberta (modo scan).                                 | `nc -zv 192.168.1.1 22` Testa se a porta 22 está aberta.
+| `nc -n <host> <porta>`               | Evita DNS (resolve apenas endereços IP).                                       | `nc -n 192.168.1.1 1234` Conecta diretamente pelo IP.
+| `nc -u <host> <porta>`               | Conecta usando o protocolo UDP em vez de TCP.                                  | `nc -u 192.168.1.1 1234` Envia dados via UDP.
+| `nc -w <tempo> <host> <porta>`       | Define o tempo limite para uma conexão.                                        | `nc -w 5 google.com 80` Tenta conectar, mas aborta após 5s.
+| `nc -e <comando>`                    | Redireciona entrada/saída para um comando (útil para criar shells remotas).    | `nc -l -p 4444 -e /bin/bash` Cria uma shell na porta 4444.
+| `nc -l -k -p <porta>`                | Escuta na porta indefinidamente (modo persistente).                            | `nc -l -k -p 1234` Fica aguardando conexões na porta.
+| ``echo <mensagem> | nc <host> <porta>`` | Envia uma mensagem simples para o servidor ou host.                            | `echo "Hello" | nc 192.168.1.1 1234` Envia "Hello".
+| `nc <host> <porta> > <arquivo>`      | Recebe dados e salva em um arquivo local.                                      | `nc 192.168.1.1 1234 > output.txt` Salva dados recebidos.
+| `nc -q <tempo> <host> <porta>`       | Fecha a conexão após um tempo definido de inatividade.                         | `nc -q 2 192.168.1.1 1234` Fecha após 2 segundos de silêncio.
+| `nc -l -p <porta> > <arquivo>`       | Salva o conteúdo enviado para o listener em um arquivo.                        | `nc -l -p 1234 > log.txt` Salva os dados recebidos em "log.txt".
+
+| **Transferir Arquivos**              | Envia ou recebe arquivos via Netcat entre dois hosts.                          | No receptor: `nc -l -p 1234 > received_file.txt`
+|                                      |                                                                                | No remetente: `nc <IP_do_receptor> 1234 < arquivo_para_enviar.txt`
+
+| **Chat Simples entre Dois Hosts**    | Cria uma conversa simples entre dois hosts via Netcat.                         | Host 1: `nc -l -p 1234`
+|                                      |                                                                                | Host 2: `nc <IP_do_Host_1> 1234`
+|                                      |                                                                                | Agora ambos podem enviar mensagens que serão exibidas na tela do outro.
+|===

@@ -1,0 +1,13 @@
+|===
+| Função               | Descrição                                       | Exemplo                                                                                   | Explicação
+| `COUNT()`            | Conta o número de registros.                   | `SELECT COUNT(*) FROM alunos;`                                                            | Retorna o número total de registros na tabela `alunos`.
+| `SUM()`              | Soma os valores de uma coluna numérica.        | `SELECT SUM(idade) FROM alunos;`                                                          | Retorna a soma de todas as idades dos alunos na tabela `alunos`.
+| `AVG()`              | Calcula a média dos valores de uma coluna.     | `SELECT AVG(idade) FROM alunos;`                                                          | Retorna a idade média dos alunos.
+| `MAX()`              | Retorna o valor máximo de uma coluna.          | `SELECT MAX(idade) FROM alunos;`                                                          | Retorna a maior idade presente na tabela `alunos`.
+| `MIN()`              | Retorna o valor mínimo de uma coluna.          | `SELECT MIN(idade) FROM alunos;`                                                          | Retorna a menor idade presente na tabela `alunos`.
+| `GROUP_CONCAT()`     | Concatena valores de uma coluna em um único resultado. | `SELECT GROUP_CONCAT(nome) FROM alunos;`                                                  | Retorna uma lista concatenada de todos os nomes dos alunos, separada por vírgulas (ou outro delimitador especificado).
+| `ROUND()`            | Arredonda valores numéricos.                   | `SELECT ROUND(AVG(idade), 2) FROM alunos;`                                                | Calcula a idade média dos alunos e arredonda o resultado para 2 casas decimais.
+| `COUNT(DISTINCT ...)` | Conta valores distintos de uma coluna.        | `SELECT COUNT(DISTINCT idade) FROM alunos;`                                               | Retorna o número de idades únicas na tabela `alunos`.
+| `VARIANCE()`         | Calcula a variância dos valores.               | `SELECT VARIANCE(idade) FROM alunos;`                                                     | Retorna a variância das idades dos alunos.
+| `STDDEV()`           | Calcula o desvio padrão dos valores.           | `SELECT STDDEV(idade) FROM alunos;`                                                       | Retorna o desvio padrão das idades dos alunos.
+|===

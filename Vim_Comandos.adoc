@@ -1,0 +1,54 @@
+|===
+| Categoria          | Comando                        | Descrição
+
+| Modos do Vim       | `Esc`                          | Volta para o Modo Normal
+|                    | `i`                            | Entra no Modo de Inserção antes do cursor
+|                    | `a`                            | Entra no Modo de Inserção após o cursor
+|                    | `:`                            | Entra no Modo de Comando
+
+| Navegação          | `h`                            | Move o cursor para a esquerda
+|                    | `j`                            | Move o cursor para baixo
+|                    | `k`                            | Move o cursor para cima
+|                    | `l`                            | Move o cursor para a direita
+|                    | `w`                            | Move para o início da próxima palavra
+|                    | `b`                            | Move para o início da palavra anterior
+|                    | `0`                            | Move para o início da linha
+|                    | `$`                            | Move para o final da linha
+|                    | `gg`                           | Move para o início do arquivo
+|                    | `G`                            | Move para o final do arquivo
+|                    | `5j`                           | Move 5 linhas para baixo
+|                    | `10w`                          | Move 10 palavras para frente
+
+| Edição de Texto    | `i`                            | Entra no modo de inserção antes do cursor
+|                    | `I`                            | Entra no modo de inserção no início da linha
+|                    | `a`                            | Entra no modo de inserção após o cursor
+|                    | `A`                            | Entra no modo de inserção no final da linha
+|                    | `o`                            | Abre uma nova linha abaixo e entra no modo de inserção
+|                    | `O`                            | Abre uma nova linha acima e entra no modo de inserção
+|                    | `x`                            | Apaga o caractere sob o cursor
+|                    | `dd`                           | Apaga a linha inteira
+|                    | `d$`                           | Apaga do cursor até o final da linha
+|                    | `dw`                           | Apaga a palavra sob o cursor
+|                    | `u`                            | Desfaz a última ação
+|                    | `Ctrl + r`                     | Refaz a última ação desfeita
+
+| "Copiar, Cortar e Colar" | `yy`                     | Copia a linha inteira (yank)
+|                    | `p`                            | Cola o conteúdo copiado após o cursor
+|                    | `P`                            | Cola o conteúdo copiado antes do cursor
+|                    | `d + movimento`               | Apaga e coloca no buffer. Ex: `dw` apaga a palavra
+|                    | `y + movimento`               | Copia e coloca no buffer. Ex: `yw` copia a palavra
+
+| Busca e Substituição | `/palavra`                   | Pesquisa por "palavra" no texto
+|                    | `?palavra`                    | Pesquisa por "palavra" no texto em direção contrária
+|                    | `n`                            | Vai para a próxima ocorrência da pesquisa
+|                    | `N`                            | Vai para a ocorrência anterior da pesquisa
+|                    | `:%s/palavra/novo_texto/g`    | Substitui todas as ocorrências no arquivo
+|                    | `:s/palavra/novo_texto/g`     | Substitui todas as ocorrências na linha atual
+
+| Salvamento e Saída | `:w`                          | Salva o arquivo
+|                    | `:w nome_do_arquivo`          | Salva com um novo nome
+|                    | `:q`                          | Sai do Vim (se não houver alterações)
+|                    | `:q!`                         | Sai sem salvar (força a saída)
+|                    | `:wq` ou `ZZ`                 | Salva e sai
+|                    | `:x`                          | Salva e sai (semelhante ao `:wq`)
+|===

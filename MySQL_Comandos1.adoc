@@ -1,0 +1,11 @@
+|===
+| Comando             | Descrição                             | Exemplo                                                                                   | Explicação
+| `CREATE DATABASE`   | Cria um banco de dados.               | `CREATE DATABASE escola;`                                                                 | Cria um banco de dados chamado `escola`.
+| `USE`               | Seleciona um banco de dados.          | `USE escola;`                                                                             | Seleciona o banco de dados `escola` para realizar operações.
+| `SHOW DATABASES`    | Lista todos os bancos de dados.       | `SHOW DATABASES;`                                                                         | Exibe todos os bancos de dados existentes no servidor MySQL.
+| `CREATE TABLE`      | Cria uma tabela.                      | `CREATE TABLE alunos (id INT AUTO_INCREMENT, nome VARCHAR(100), idade INT, PRIMARY KEY (id));` | Cria uma tabela chamada `alunos` com as colunas `id`, `nome` e `idade`. Define `id` como chave primária e com incremento automático.
+| `INSERT INTO`       | Insere dados na tabela.               | `INSERT INTO alunos (nome, idade) VALUES ('João', 20);`                                   | Insere um registro na tabela `alunos` com o nome `"João"` e a idade `20`.
+| `SELECT`            | Consulta dados na tabela.             | `SELECT * FROM alunos;`                                                                   | Retorna todos os registros da tabela `alunos`. O `*` indica que todas as colunas devem ser exibidas.
+| `DROP DATABASE`     | Remove um banco de dados.             | `DROP DATABASE escola;`                                                                   | Exclui o banco de dados `escola` e todos os seus dados.
+| `DROP TABLE`        | Remove uma tabela.                    | `DROP TABLE alunos;`                                                                      | Apaga a tabela `alunos` e todos os dados contidos nela.
+|===
