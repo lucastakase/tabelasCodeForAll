@@ -1,0 +1,27 @@
+|===
+| Recurso            | Descrição                                                                                           | Métodos Importantes                                                                                      | Exemplo
+
+| Lambda Expressions | Permite representar funções anônimas (sem nome), simplificando a escrita de código funcional.        | Não se aplica diretamente a métodos, mas pode ser utilizado com Interfaces Funcionais como Predicate, Consumer, etc. | `(x, y) -> x + y`
+
+| Functional Interfaces | Interfaces com um único método abstrato, utilizadas para representar expressões lambda.           | `@FunctionalInterface`: Anotação que garante que a interface tenha apenas um método abstrato.                        | `interface Operacao { int calcular(int x, int y); }`
+
+| Stream API          | Permite processar sequências de dados de forma declarativa, usando filtros, mapeamentos, reduções, entre outros. | `filter()`, `map()`, `reduce()`, `collect()`, `forEach()`, `sorted()`, `distinct()`, `flatMap()`, `anyMatch()`, `allMatch()` | `list.stream().filter(n -> n > 10).map(n -> n * 2).collect(Collectors.toList())`
+
+| Method References   | Referência a métodos existentes de forma concisa, substituindo expressões lambda quando possível.   | `ClassName::methodName`: Referência para métodos estáticos e de instância, incluindo construtores.                   | `list.forEach(System.out::println)`
+
+| Optional            | Tipo que pode conter ou não um valor, evitando o uso de valores `null` e melhorando a segurança e legibilidade do código. | `isPresent()`, `ifPresent()`, `get()`, `orElse()`, `orElseGet()`, `map()`, `flatMap()`, `filter()`                  | `Optional<String> name = Optional.of("John"); name.ifPresent(System.out::println);`
+
+| Default Methods     | Métodos com implementação padrão dentro de interfaces, permitindo evolução de interfaces sem quebrar o código existente. | `default`: Modificador que permite adicionar implementações em métodos de interfaces.                                | `interface MinhaInterface { default void meuMetodo() { System.out.println("Método padrão"); } }`
+
+| Collectors          | Classe utilitária para acumulação e transformação de dados de streams.                              | `joining()`, `groupingBy()`, `partitioningBy()`, `mapping()`, `reducing()`, `toList()`, `toSet()`, `toMap()`         | `list.stream().collect(Collectors.joining(", "))`
+
+| Functional Programming | Estilo de programação em que funções são tratadas como valores, e a programação é feita principalmente com funções puras e imutabilidade. | Funções como parâmetros: Passar funções como argumentos para métodos, como `map()`, `filter()`, `reduce()`.        | `list.stream().reduce(0, Integer::sum)`
+
+| Predicates          | Interface funcional que representa uma condição booleana (verdadeiro ou falso) aplicada a um objeto. | `test()`, `and()`, `or()`, `negate()`, `isEqual()`                                                                 | `Predicate<String> startsWithJ = s -> s.startsWith("J");`
+
+| Consumers           | Interface funcional que representa uma operação que aceita um único argumento e não retorna nada (efetua ações). | `accept()`, `andThen()`                                                                                         | `Consumer<String> print = s -> System.out.println(s);`
+
+| Functions           | Interface funcional que aplica uma função a um valor e retorna um valor.                            | `apply()`, `compose()`, `andThen()`                                                                               | `Function<Integer, Integer> square = x -> x * x;`
+
+| BiFunction          | Interface funcional que aceita dois argumentos e retorna um valor.                                  | `apply()`, `andThen()`, `compose()`                                                                               | `BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;`
+|===
